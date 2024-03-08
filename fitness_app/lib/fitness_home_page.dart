@@ -1,4 +1,5 @@
 import 'package:fitness_app/Model/fitness_model.dart';
+import 'package:fitness_app/details_screen.dart';
 import 'package:flutter/material.dart';
 
 class FitnessHomePage extends StatelessWidget {
@@ -68,7 +69,7 @@ class FitnessHomePage extends StatelessWidget {
             const SizedBox(height: 10),
             Expanded(
               child: ListView.builder(
-                itemCount: 5,
+                itemCount: 4,
                 shrinkWrap: true,
                 itemBuilder: (context, index) {
                   final fitness = userItems[index];
@@ -82,7 +83,16 @@ class FitnessHomePage extends StatelessWidget {
                       height: 190,
                       width: 95,
                       child: GestureDetector(
-                        onTap: () {},
+                        onTap: () {
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                              builder: (context) => DetailScreen(
+                                fitness: fitness,
+                              ),
+                            ),
+                          );
+                        },
                         child: Row(
                           children: [
                             const SizedBox(width: 30),
