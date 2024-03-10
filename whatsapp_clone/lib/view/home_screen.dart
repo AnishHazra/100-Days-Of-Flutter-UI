@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:whatsapp_clone/view/chatlist_view.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
@@ -84,8 +85,14 @@ class _HomeScreenState extends State<HomeScreen>
           ),
         ),
       ),
-      body: const Column(
-        children: [],
+      body: TabBarView(
+        controller: tabController,
+        children: const [
+          Icon(Icons.camera_alt_outlined),
+          ChatListView(),
+          Text('status'),
+          Text('calls'),
+        ],
       ),
       floatingActionButton: FloatingActionButton(
         backgroundColor: Colors.teal,
