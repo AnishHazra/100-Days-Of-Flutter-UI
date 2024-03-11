@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:whatsapp_clone/constant/constants.dart';
 import 'package:whatsapp_clone/model/chat_model/chat_helper.dart';
 import 'package:whatsapp_clone/model/chat_model/chat_item_model.dart';
+import 'package:whatsapp_clone/view/chat_view.dart';
 
 class ChatListView extends StatelessWidget {
   const ChatListView({super.key});
@@ -15,7 +16,17 @@ class ChatListView extends StatelessWidget {
         return Column(
           children: [
             InkWell(
-              onTap: () {},
+              onTap: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => ChatScreen(
+                      image: chatItem.image,
+                      name: chatItem.name,
+                    ),
+                  ),
+                );
+              },
               child: ListTile(
                 leading: CircleAvatar(
                   radius: 28,
