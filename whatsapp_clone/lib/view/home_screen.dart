@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:whatsapp_clone/view/calls_view.dart';
 import 'package:whatsapp_clone/view/chatlist_view.dart';
+import 'package:whatsapp_clone/view/setting.dart';
 import 'package:whatsapp_clone/view/status_view.dart';
 
 class HomeScreen extends StatefulWidget {
@@ -24,7 +25,7 @@ class _HomeScreenState extends State<HomeScreen>
         setState(() {
           switch (tabController.index) {
             case 0:
-              fabIcon = Icons.camera_alt_outlined;
+              fabIcon = Icons.groups;
               break;
             case 1:
               fabIcon = Icons.chat;
@@ -44,7 +45,7 @@ class _HomeScreenState extends State<HomeScreen>
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: Colors.teal,
+        backgroundColor: const Color(0xff008679),
         title: Text(
           "WhatsApp",
           style: Theme.of(context)
@@ -74,7 +75,20 @@ class _HomeScreenState extends State<HomeScreen>
               const PopupMenuItem(child: Text("Linked devices")),
               const PopupMenuItem(child: Text("Starred messages")),
               const PopupMenuItem(child: Text("Payments")),
-              const PopupMenuItem(child: Text("Settings")),
+              PopupMenuItem(
+                child: InkWell(
+                  onTap: () {
+                    Navigator.pop(context);
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => const SettingScreen(),
+                      ),
+                    );
+                  },
+                  child: const Text("Settings"),
+                ),
+              ),
             ],
           ),
         ],
@@ -119,14 +133,14 @@ class _HomeScreenState extends State<HomeScreen>
       body: TabBarView(
         controller: tabController,
         children: const [
-          Icon(Icons.camera_alt_outlined),
+          Icon(Icons.groups),
           ChatListView(),
           StatusView(),
           CallsView(),
         ],
       ),
       floatingActionButton: FloatingActionButton(
-        backgroundColor: Colors.teal,
+        backgroundColor: const Color(0xff008679),
         onPressed: () {},
         child: const Icon(Icons.message, color: Colors.white),
       ),
