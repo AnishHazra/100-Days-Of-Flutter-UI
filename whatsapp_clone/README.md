@@ -1,16 +1,14 @@
-# whatsapp_clone
+# WhatsApp UI Clone
 
-A new Flutter project.
+## Screenshorts
+![Whatsapp clone](https://github.com/AnishHazra/100-Days-Of-Flutter-UI/assets/121759157/76880b0e-84fd-4529-b419-a87e164d5371)
 
-## Getting Started
+## Demo
+![demo](https://github.com/AnishHazra/100-Days-Of-Flutter-UI/assets/121759157/69e4cebe-bd27-4e59-ad0b-2c02e8b006f3)
 
-This project is a starting point for a Flutter application.
 
-A few resources to get you started if this is your first Flutter project:
+## Follow me
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+- [Instagram](https://www.instagram.com/_dev.anish/)
+- [Linkedin](https://www.linkedin.com/in/anish-hazra-667396176/)
+- [Youtube](https://www.youtube.com/@koder2022/featured)
