@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:naruto_characters/model/anime_characters.dart';
+import 'package:naruto_characters/anime_characters.dart';
 
 void main() {
   runApp(const MyApp());
