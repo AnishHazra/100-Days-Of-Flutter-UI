@@ -37,7 +37,7 @@ final List<dynamic> characters = [
   },
   {
     'name': 'Naruto\nUzumaki',
-    'topAbilities': '1. Six Paths Sage Mode\n2. Shadow Clone Technique',
+    'topAbilities': '1. Six Paths Sage Mode\n2. Shadow Clone',
     'FamousAbilities': 'Shadow Clone Technique',
     'about':
         'Naruto is ridiculed and ostracized on account of the Nine-Tailed Demon Fox—a malevolent creature that attacked Konohagakure—that was sealed away in his body. ',
@@ -46,7 +46,7 @@ final List<dynamic> characters = [
   },
   {
     'name': 'Sasuke\nUchiha',
-    'topAbilities': '1. Susanoo\n2. Mangekyō Sharingan',
+    'topAbilities': '1. Mangekyō Sharingan\n2. Susanoo',
     'FamousAbilities': 'Mangekyō Sharingan',
     'about':
         'Sasuke belongs to the Uchiha clan, a notorious ninja family, and one of the most powerful, allied with Konohagakure.',
