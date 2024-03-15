@@ -1,6 +1,7 @@
 import 'package:animate_do/animate_do.dart';
 import 'package:flutter/material.dart';
 import 'package:naruto_characters/model/model.dart';
+import 'package:naruto_characters/view/character_detail.dart';
 
 class AnimeCharacters extends StatefulWidget {
   const AnimeCharacters({super.key});
@@ -11,7 +12,14 @@ class AnimeCharacters extends StatefulWidget {
 
 class _AnimeCharactersState extends State<AnimeCharacters>
     with TickerProviderStateMixin {
-  final character = characters.length;
+  late final PageController _pageController;
+  final int _currentIndex = 0;
+
+  @override
+  void initState() {
+    super.initState();
+    _pageController = PageController(initialPage: _currentIndex);
+  }
 
   //animation
   late final AnimationController _controller =
@@ -30,11 +38,11 @@ class _AnimeCharactersState extends State<AnimeCharacters>
   Widget build(BuildContext context) {
     return Scaffold(
       body: PageView.builder(
-        itemCount: character,
+        controller: _pageController,
+        itemCount: characters.length,
         itemBuilder: (context, index) {
           return Stack(
             children: [
-              //For images
               SizedBox(
                 height: MediaQuery.of(context).size.height,
                 width: MediaQuery.of(context).size.width,
@@ -53,13 +61,16 @@ class _AnimeCharactersState extends State<AnimeCharacters>
                   height: MediaQuery.of(context).size.height,
                   width: MediaQuery.of(context).size.width,
                   decoration: BoxDecoration(
-                      gradient:
-                          LinearGradient(begin: Alignment.bottomRight, colors: [
-                    Colors.black.withOpacity(0.9),
-                    Colors.black.withOpacity(0.8),
-                    Colors.black.withOpacity(0.2),
-                    Colors.black.withOpacity(0.1),
-                  ])),
+                    gradient: LinearGradient(
+                      begin: Alignment.bottomRight,
+                      colors: [
+                        Colors.black.withOpacity(0.9),
+                        Colors.black.withOpacity(0.8),
+                        Colors.black.withOpacity(0.2),
+                        Colors.black.withOpacity(0.1),
+                      ],
+                    ),
+                  ),
                   child: Column(
                     mainAxisAlignment: MainAxisAlignment.end,
                     crossAxisAlignment: CrossAxisAlignment.start,
@@ -90,27 +101,7 @@ class _AnimeCharactersState extends State<AnimeCharacters>
                           ),
                         ),
                       ),
-                      Padding(
-                        padding: const EdgeInsets.symmetric(vertical: 10),
-                        child: Row(
-                          children: [
-                            FadeInRight(
-                              duration: const Duration(milliseconds: 750),
-                              delay: const Duration(milliseconds: 100),
-                              child: SizedBox(
-                                child: Text(
-                                  characters[index]['topAbilities'],
-                                  style: const TextStyle(
-                                    fontSize: 16,
-                                    color: Colors.white70,
-                                    fontWeight: FontWeight.bold,
-                                  ),
-                                ),
-                              ),
-                            ),
-                          ],
-                        ),
-                      ),
+                      const SizedBox(height: 15),
                       FadeInLeft(
                         duration: const Duration(milliseconds: 750),
                         delay: const Duration(milliseconds: 100),
@@ -123,25 +114,36 @@ class _AnimeCharactersState extends State<AnimeCharacters>
                               color: Colors.amber,
                               borderRadius: BorderRadius.circular(30),
                             ),
-                            child: const Row(
-                              mainAxisAlignment: MainAxisAlignment.center,
-                              children: [
-                                Center(
-                                  child: Text(
-                                    "More Detail",
-                                    style: TextStyle(
-                                      fontSize: 18,
-                                      color: Colors.black,
-                                      fontWeight: FontWeight.bold,
+                            child: InkWell(
+                              onTap: () {
+                                Navigator.push(
+                                  context,
+                                  MaterialPageRoute(
+                                    builder: (context) =>
+                                        CharacterDetail(characterIndex: index),
+                                  ),
+                                );
+                              },
+                              child: const Row(
+                                mainAxisAlignment: MainAxisAlignment.center,
+                                children: [
+                                  Center(
+                                    child: Text(
+                                      "More Detail",
+                                      style: TextStyle(
+                                        fontSize: 18,
+                                        color: Colors.black,
+                                        fontWeight: FontWeight.bold,
+                                      ),
                                     ),
                                   ),
-                                ),
-                                Icon(Icons.arrow_forward_ios)
-                              ],
+                                  Icon(Icons.arrow_forward_ios)
+                                ],
+                              ),
                             ),
                           ),
                         ),
-                      )
+                      ),
                     ],
                   ),
                 ),
@@ -151,5 +153,11 @@ class _AnimeCharactersState extends State<AnimeCharacters>
         },
       ),
     );
+  }
+
+  @override
+  void dispose() {
+    _pageController.dispose();
+    super.dispose();
   }
 }
