@@ -138,7 +138,11 @@ class HomePage extends StatelessWidget {
         onTap: () {
           Navigator.push(
             context,
-            MaterialPageRoute(builder: (context) => const ShoesPage()),
+            MaterialPageRoute(
+              builder: (context) => ShoesPage(
+                image: image,
+              ),
+            ),
           );
         },
         child: Container(
@@ -174,7 +178,7 @@ class HomePage extends StatelessWidget {
                         Text(
                           "Sneakers",
                           style: TextStyle(
-                            color: Colors.black87,
+                            color: Colors.white,
                             fontSize: 30,
                             fontWeight: FontWeight.bold,
                           ),
@@ -183,7 +187,7 @@ class HomePage extends StatelessWidget {
                         Text(
                           "Nike",
                           style: TextStyle(
-                            color: Colors.black,
+                            color: Colors.white,
                             fontSize: 20,
                           ),
                         ),
