@@ -45,11 +45,9 @@ class _ShoesPageState extends State<ShoesPage> {
                         onTap: () {
                           Navigator.pop(context);
                         },
-                        child: Container(
-                          child: const Icon(
-                            Icons.arrow_back_ios,
-                            color: Colors.white,
-                          ),
+                        child: const Icon(
+                          Icons.arrow_back_ios,
+                          color: Colors.white,
                         ),
                       ),
                       Container(
