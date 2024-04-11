@@ -9,9 +9,13 @@ class WatchTile extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final screenWidth = MediaQuery.of(context).size.width;
+    final itemWidth = screenWidth * 0.7; // Adjust the width as needed
+    // final imageSize = itemWidth * 0.6; // Adjust image size ratio as needed
+
     return Container(
-      margin: const EdgeInsets.only(left: 25),
-      width: 280,
+      margin: const EdgeInsets.only(left: 25), // Adjust margin as needed
+      width: itemWidth,
       decoration: BoxDecoration(
         color: Colors.white,
         borderRadius: BorderRadius.circular(12),
@@ -22,7 +26,12 @@ class WatchTile extends StatelessWidget {
           //watch pic
           ClipRRect(
             borderRadius: BorderRadius.circular(12),
-            child: Image.asset(watch.imagePath),
+            child: Image.asset(
+              watch.imagePath,
+              // width: imageSize,
+              // height: imageSize,
+              fit: BoxFit.cover,
+            ),
           ),
 
           //description
@@ -63,7 +72,7 @@ class WatchTile extends StatelessWidget {
                   ],
                 ),
 
-                //plue button
+                //plus button
                 GestureDetector(
                   onTap: onTap,
                   child: Container(
@@ -84,8 +93,6 @@ class WatchTile extends StatelessWidget {
               ],
             ),
           ),
-
-          //button to add to cart
         ],
       ),
     );

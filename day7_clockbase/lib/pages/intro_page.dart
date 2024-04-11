@@ -8,60 +8,66 @@ class IntroPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.black,
-      body: Column(
-        children: [
-          //logo
-          Image.asset(
-            "assets/images/bg.jpg",
-            // fit: BoxFit.scaleDown,
-            height: 450,
-            // width: 450,
+      body: SingleChildScrollView(
+        child: ConstrainedBox(
+          constraints: BoxConstraints(
+            minHeight: MediaQuery.of(context).size.height,
           ),
-          //title
-          const Padding(
-            padding: EdgeInsets.all(20.0),
-            child: Text(
-              "let's find\nelegant watch that suits you",
-              style: TextStyle(
-                color: Colors.white,
-                fontWeight: FontWeight.bold,
-                fontSize: 45,
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              // Logo
+              Image.asset(
+                "assets/images/bg.jpg",
+                height: MediaQuery.of(context).size.height * 0.5,
               ),
-            ),
-          ),
-          const SizedBox(height: 10),
-          //start button
-          Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 20),
-            child: GestureDetector(
-              onTap: () {
-                Navigator.pushReplacement(
-                  context,
-                  MaterialPageRoute(
-                    builder: (context) => const HomePage(),
+              // Title
+              const Padding(
+                padding: EdgeInsets.all(20.0),
+                child: Text(
+                  "Let's find\nan elegant watch that suits you",
+                  style: TextStyle(
+                    color: Colors.white,
+                    fontWeight: FontWeight.bold,
+                    fontSize: 42,
                   ),
-                );
-              },
-              child: Container(
-                decoration: BoxDecoration(
-                  color: const Color(0xff256FDE),
-                  borderRadius: BorderRadius.circular(8),
                 ),
-                padding: const EdgeInsets.all(25.0),
-                child: const Center(
-                  child: Text(
-                    "Get Started",
-                    style: TextStyle(
-                      color: Colors.white,
-                      fontWeight: FontWeight.bold,
-                      fontSize: 18,
+              ),
+              SizedBox(height: MediaQuery.of(context).size.height * 0.01),
+              // Start Button
+              Padding(
+                padding: const EdgeInsets.symmetric(horizontal: 20),
+                child: GestureDetector(
+                  onTap: () {
+                    Navigator.pushReplacement(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => const HomePage(),
+                      ),
+                    );
+                  },
+                  child: Container(
+                    decoration: BoxDecoration(
+                      color: const Color(0xff256FDE),
+                      borderRadius: BorderRadius.circular(8),
+                    ),
+                    padding: const EdgeInsets.all(25.0),
+                    child: Center(
+                      child: Text(
+                        "Get Started",
+                        style: TextStyle(
+                          color: Colors.white,
+                          fontWeight: FontWeight.bold,
+                          fontSize: MediaQuery.of(context).size.width * 0.05,
+                        ),
+                      ),
                     ),
                   ),
                 ),
               ),
-            ),
+            ],
           ),
-        ],
+        ),
       ),
     );
   }
