@@ -91,13 +91,7 @@ class _ShopPageState extends State<ShopPage> {
               },
             ),
           ),
-
-          const Padding(
-            padding: EdgeInsets.only(top: 25.0, left: 25, right: 25),
-            child: Divider(
-              color: Colors.white,
-            ),
-          )
+          const SizedBox(height: 10),
         ],
       ),
     );
