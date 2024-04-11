@@ -1,6 +1,6 @@
 {
-    "name": "day6_facebook_clone",
-    "short_name": "day6_facebook_clone",
+    "name": "day6_clockbase",
+    "short_name": "day6_clockbase",
     "start_url": ".",
     "display": "standalone",
     "background_color": "#0175C2",
