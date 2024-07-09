@@ -2,12 +2,24 @@ import 'package:flutter/material.dart';
 import 'package:space_app/components/bottom_navbar.dart';
 import 'package:space_app/components/my_drawer.dart';
 import 'package:space_app/model/planet.dart';
+import 'package:space_app/pages/planet_details_page.dart';
 
 class SolarSystemPage extends StatelessWidget {
   const SolarSystemPage({super.key});
 
   @override
   Widget build(BuildContext context) {
+    void navigateToPlanetDetail(BuildContext context, PlanetInfo planet) {
+      Navigator.push(
+        context,
+        MaterialPageRoute(
+          builder: (context) => PlanetDetailsPage(
+            planet: planet,
+          ),
+        ),
+      );
+    }
+
     return Scaffold(
       appBar: AppBar(
         title: Center(
@@ -70,10 +82,15 @@ class SolarSystemPage extends StatelessWidget {
                 //! Planet 1 (Top)
                 Positioned(
                   top: 30,
-                  child: Image.asset(
-                    planets[3].iconImage,
-                    width: 50,
-                    height: 50,
+                  child: GestureDetector(
+                    onTap: () {
+                      navigateToPlanetDetail(context, planets[3]);
+                    },
+                    child: Image.asset(
+                      planets[3].iconImage,
+                      width: 50,
+                      height: 50,
+                    ),
                   ),
                 ),
 
@@ -81,10 +98,15 @@ class SolarSystemPage extends StatelessWidget {
                 Positioned(
                   top: 60,
                   left: 90,
-                  child: Image.asset(
-                    planets[1].iconImage,
-                    width: 50,
-                    height: 50,
+                  child: GestureDetector(
+                    onTap: () {
+                      navigateToPlanetDetail(context, planets[1]);
+                    },
+                    child: Image.asset(
+                      planets[1].iconImage,
+                      width: 50,
+                      height: 50,
+                    ),
                   ),
                 ),
 
@@ -92,39 +114,59 @@ class SolarSystemPage extends StatelessWidget {
                 Positioned(
                   top: 60,
                   right: 90,
-                  child: Image.asset(
-                    planets[4].iconImage,
-                    width: 50,
-                    height: 50,
+                  child: GestureDetector(
+                    onTap: () {
+                      navigateToPlanetDetail(context, planets[4]);
+                    },
+                    child: Image.asset(
+                      planets[4].iconImage,
+                      width: 50,
+                      height: 50,
+                    ),
                   ),
                 ),
 
                 //! Planet 4 (Left)
                 Positioned(
                   left: 20,
-                  child: Image.asset(
-                    planets[6].iconImage,
-                    width: 100,
-                    height: 50,
+                  child: GestureDetector(
+                    onTap: () {
+                      navigateToPlanetDetail(context, planets[6]);
+                    },
+                    child: Image.asset(
+                      planets[6].iconImage,
+                      width: 100,
+                      height: 50,
+                    ),
                   ),
                 ),
                 //! Planet 6 (Bottom-Left)
                 Positioned(
                   bottom: 60,
                   left: 90,
-                  child: Image.asset(
-                    planets[2].iconImage,
-                    width: 50,
-                    height: 50,
+                  child: GestureDetector(
+                    onTap: () {
+                      navigateToPlanetDetail(context, planets[2]);
+                    },
+                    child: Image.asset(
+                      planets[2].iconImage,
+                      width: 50,
+                      height: 50,
+                    ),
                   ),
                 ),
                 //! Planet 5 (Right)
                 Positioned(
                   right: 45,
-                  child: Image.asset(
-                    planets[5].iconImage,
-                    width: 50,
-                    height: 50,
+                  child: GestureDetector(
+                    onTap: () {
+                      navigateToPlanetDetail(context, planets[5]);
+                    },
+                    child: Image.asset(
+                      planets[5].iconImage,
+                      width: 50,
+                      height: 50,
+                    ),
                   ),
                 ),
 
@@ -132,20 +174,30 @@ class SolarSystemPage extends StatelessWidget {
                 Positioned(
                   bottom: 60,
                   right: 90,
-                  child: Image.asset(
-                    planets[8].iconImage,
-                    width: 50,
-                    height: 50,
+                  child: GestureDetector(
+                    onTap: () {
+                      navigateToPlanetDetail(context, planets[8]);
+                    },
+                    child: Image.asset(
+                      planets[8].iconImage,
+                      width: 50,
+                      height: 50,
+                    ),
                   ),
                 ),
 
                 //! Planet 8 (Bottom)
                 Positioned(
                   bottom: 20,
-                  child: Image.asset(
-                    planets[7].iconImage,
-                    width: 50,
-                    height: 50,
+                  child: GestureDetector(
+                    onTap: () {
+                      navigateToPlanetDetail(context, planets[7]);
+                    },
+                    child: Image.asset(
+                      planets[7].iconImage,
+                      width: 50,
+                      height: 50,
+                    ),
                   ),
                 ),
               ],

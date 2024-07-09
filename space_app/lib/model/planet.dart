@@ -75,6 +75,6 @@ List<PlanetInfo> planets = [
     name: 'Neptune',
     iconImage: 'assets/images/Neptune.png',
     description:
-        "Neptune, the eighth and farthest known planet from the Sun, is similar to Uranus in composition and appearance. It is an ice giant with a deep blue color, also due to atmospheric methane. Neptune is known for its strong winds and storms, including the Great Dark Spot, a storm comparable to Jupiter's Great Red Spot. Neptune has at least 14 moons, with Triton being the largest. Triton is geologically active, with geysers of nitrogen, and orbits the planet in the opposite direction of Neptune's rotation, indicating it may have been captured from the Kuiper Belt.",
+        "Neptune, the eighth and farthest known planet from the Sun, is similar to Uranus in composition and appearance. It is an ice giant with a deep blue color, also due to atmospheric methane. Neptune is known for its strong winds and storms, including the Great Dark Spot, a storm comparable to Jupiter's Great Red Spot. Neptune has at least 14 moons, with Triton being the largest.",
   ),
 ];
