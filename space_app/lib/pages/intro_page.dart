@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:space_app/pages/solar_system_page.dart';
 
 class IntroPage extends StatelessWidget {
   const IntroPage({super.key});
@@ -39,7 +40,14 @@ class IntroPage extends StatelessWidget {
                 ),
                 const SizedBox(height: 40),
                 ElevatedButton(
-                  onPressed: () {},
+                  onPressed: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => const SolarSystemPage(),
+                      ),
+                    );
+                  },
                   style: ElevatedButton.styleFrom(
                     foregroundColor: Colors.black,
                     backgroundColor: Colors.white,
