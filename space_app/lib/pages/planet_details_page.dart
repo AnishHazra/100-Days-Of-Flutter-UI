@@ -55,21 +55,43 @@ class PlanetDetailsPage extends StatelessWidget {
               fit: BoxFit.contain,
             ),
             const SizedBox(height: 25),
-            const Row(
+            Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
                 SizedBox(
                   width: 80,
                   child: Row(
                     children: [
-                      Icon(
+                      const Icon(
                         Icons.brightness_3,
                         color: Colors.white,
                       ),
-                      SizedBox(width: 5),
+                      const SizedBox(width: 5),
                       Text(
-                        "1",
+                        planet.moon.toString(),
+                        style: const TextStyle(
+                          color: Colors.white,
+                          fontWeight: FontWeight.bold,
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+                SizedBox(
+                  width: 100,
+                  child: Row(
+                    children: [
+                      const Text(
+                        "Age: ",
                         style: TextStyle(
+                          color: Colors.white,
+                          fontWeight: FontWeight.bold,
+                        ),
+                      ),
+                      const SizedBox(width: 5),
+                      Text(
+                        planet.age.toString(),
+                        style: const TextStyle(
                           color: Colors.white,
                           fontWeight: FontWeight.bold,
                         ),
@@ -81,36 +103,14 @@ class PlanetDetailsPage extends StatelessWidget {
                   width: 80,
                   child: Row(
                     children: [
-                      Text(
-                        "Age:",
-                        style: TextStyle(
-                          color: Colors.white,
-                          fontWeight: FontWeight.bold,
-                        ),
-                      ),
-                      SizedBox(width: 5),
-                      Text(
-                        "4.5 bln",
-                        style: TextStyle(
-                          color: Colors.white,
-                          fontWeight: FontWeight.bold,
-                        ),
-                      ),
-                    ],
-                  ),
-                ),
-                SizedBox(
-                  width: 80,
-                  child: Row(
-                    children: [
-                      Icon(
+                      const Icon(
                         Icons.thermostat,
                         color: Colors.white,
                       ),
-                      SizedBox(width: 5),
+                      const SizedBox(width: 5),
                       Text(
-                        "15°C",
-                        style: TextStyle(
+                        planet.temp,
+                        style: const TextStyle(
                           color: Colors.white,
                           fontWeight: FontWeight.bold,
                         ),
