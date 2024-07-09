@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:space_app/components/bottom_navbar.dart';
+import 'package:space_app/components/my_drawer.dart';
 import 'package:space_app/model/planet.dart';
 
 class SolarSystemPage extends StatelessWidget {
@@ -27,15 +28,18 @@ class SolarSystemPage extends StatelessWidget {
             onPressed: () {},
           ),
         ],
-        leading: IconButton(
-          padding: const EdgeInsets.only(left: 30),
-          onPressed: () {},
-          icon: Image.asset(
-            "assets/images/Menu.png",
-            height: 25,
+        leading: Builder(
+          builder: (context) => IconButton(
+            padding: const EdgeInsets.only(left: 30),
+            onPressed: () => Scaffold.of(context).openDrawer(),
+            icon: Image.asset(
+              "assets/images/Menu.png",
+              height: 25,
+            ),
           ),
         ),
       ),
+      drawer: const MyDrawer(),
       backgroundColor: Colors.transparent,
       extendBodyBehindAppBar: true,
       body: Stack(
